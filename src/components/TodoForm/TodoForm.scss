@@ -17,12 +17,12 @@
     border-radius: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: rgb(0, 170, 249);
+    color: $todo-blue;
     padding-left: 0.8rem;
     font-weight: 700;
 
     &::placeholder {
-      color: rgb(0, 170, 249);
+      color: $todo-blue;
     }
   }
 
@@ -34,7 +34,7 @@
     border-radius: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: rgb(0, 170, 249);
+    color: $todo-blue;
     font-weight: 700;
     width: 30%;
   }
