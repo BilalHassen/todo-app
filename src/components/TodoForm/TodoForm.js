@@ -9,6 +9,7 @@ function TodoForm() {
           className="todo-form__input"
           placeholder="enter todo"
         />
+        <button className="todo-form__button">add task</button>
       </form>
     </>
   );
