@@ -1,0 +1,29 @@
+@use "../../partials/global";
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
+
+.todo {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: $transparent-background;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+
+  &__text {
+    width: 100%;
+  }
+
+  &__delete-icon,
+  &__edit-icon {
+    color: rgb(0, 0, 0);
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
