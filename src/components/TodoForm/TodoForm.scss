@@ -3,7 +3,7 @@
 @use "../../partials/mixins" as *;
 
 .todo-form {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   padding-top: 1rem;
   display: flex;
   gap: 0.4rem;
@@ -17,11 +17,12 @@
     border-radius: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: rgb(249, 0, 249);
+    color: rgb(0, 170, 249);
     padding-left: 0.8rem;
+    font-weight: 700;
 
     &::placeholder {
-      color: rgb(249, 0, 249);
+      color: rgb(0, 170, 249);
     }
   }
 
@@ -33,7 +34,8 @@
     border-radius: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: rgb(249, 0, 249);
+    color: rgb(0, 170, 249);
+    font-weight: 700;
     width: 30%;
   }
 }
