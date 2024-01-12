@@ -1,3 +1,6 @@
+@use "../../partials/global";
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
 .todo-container {
   &__header {
     color: green;
