@@ -4,6 +4,17 @@
   font-family: "Roboto";
 }
 
+.App {
+  height: 100vh;
+  background-size: cover;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    210deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

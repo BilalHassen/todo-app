@@ -5,7 +5,7 @@ function TodoContainer() {
     <>
       <section className="todo-container">
         <h1 className="todo-container__header">
-          Add something you like to get done!
+          Add something you'd like to get done!
         </h1>
       </section>
     </>
