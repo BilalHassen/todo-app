@@ -8,15 +8,6 @@ import { v4 as uuidv4 } from "uuid";
 function TodoContainer() {
   const [todos, setTodo] = useState([]);
 
-  useEffect(() => {
-    // get the todos from local storage and convert the json formatted string
-    // into a javascript object with JSON.parse()
-    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-    // update the todos state with the todos from the local storage
-    setTodo(storedTodos);
-    console.log(todos);
-  }, []);
-
   // function to add a new to do to the array of todos
   const addTodo = (todo) => {
     setTodo((prevTodos) => {
@@ -25,8 +16,7 @@ function TodoContainer() {
         { id: uuidv4(), task: todo, isEdited: false, completed: false },
       ];
       console.log(newTodo);
-      const jsonTodo = JSON.stringify(newTodo);
-      localStorage.setItem("todos", jsonTodo);
+
       return newTodo;
     });
   };
@@ -34,7 +24,17 @@ function TodoContainer() {
   const editTodo = (id) => {
     setTodo(
       todos.map((todo) =>
-        todo.id === id ? { ...todos, isEdited: !todo.isEdited } : todo
+        todo.id === id ? { ...todo, isEdited: !todo.isEdited } : todo
+      )
+    );
+  };
+
+  const editTask = (task, id) => {
+    setTodo(
+      todos.map((todo) =>
+        todo.id === id
+          ? { ...todo, task: task, isEdited: !todo.isEdited }
+          : todo
       )
     );
   };
@@ -46,9 +46,9 @@ function TodoContainer() {
         <TodoForm addTodo={addTodo} />
         {/*map over the todos array and add render the todo component with the data */}
         <div className="todo__wrapper">
-          {todos.map((todo, index) =>
+          {todos.map((todo) =>
             todo.isEdited ? (
-              <EditTodoForm />
+              <EditTodoForm task={todo} editTask={editTask} />
             ) : (
               <Todo key={todo.id} task={todo} editTodo={editTodo} />
             )
