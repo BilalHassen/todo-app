@@ -20,6 +20,8 @@
   &__complete {
     width: 100%;
     text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    text-decoration-color: rgb(68, 68, 68);
   }
 
   &__delete-icon,
