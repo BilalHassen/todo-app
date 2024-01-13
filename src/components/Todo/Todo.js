@@ -10,7 +10,11 @@ function Todo({ task, editTodo }) {
       <div className="todo">
         <p className="todo__text">{task.task}</p>
         <div className="todo__icon-container">
-          <FontAwesomeIcon icon={faPenToSquare} className="todo__edit-icon" />
+          <FontAwesomeIcon
+            icon={faPenToSquare}
+            className="todo__edit-icon"
+            onClick={() => editTodo(task.id)}
+          />
           <FontAwesomeIcon icon={faTrashCan} className="todo__delete-icon" />
         </div>
       </div>
