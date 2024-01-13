@@ -9,7 +9,7 @@
   gap: 0.4rem;
 
   &__input {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(254, 254, 254, 0.283);
     border: none;
     outline: none;
     box-shadow: none;
@@ -22,19 +22,19 @@
     font-weight: 700;
 
     &::placeholder {
-      color: $todo-blue;
+      color: rgb(0, 4, 255);
     }
   }
 
   &__button {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(254, 254, 254, 0.283);
     border: none;
     outline: none;
     box-shadow: none;
     border-radius: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: $todo-blue;
+    color: rgb(0, 4, 255);
     font-weight: 700;
     width: 30%;
   }
