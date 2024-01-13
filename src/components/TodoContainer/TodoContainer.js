@@ -25,9 +25,6 @@ function TodoContainer() {
       <section className="todo-container">
         <h1 className="todo-container__header">Add something to get done !</h1>
         <TodoForm addTodo={addTodo} />
-        <button onClick={() => addTodo("clean the house")}>
-          Add Todo Manually
-        </button>
       </section>
     </>
   );
