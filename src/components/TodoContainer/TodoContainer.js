@@ -43,6 +43,14 @@ function TodoContainer() {
     setTodo(todos.filter((todo) => todo.id !== id));
   };
 
+  const completeTodo = (id) => {
+    setTodo(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <>
       <section className="todo-container">
@@ -59,6 +67,7 @@ function TodoContainer() {
                 task={todo}
                 editTodo={editTodo}
                 deleteTodo={deleteTodo}
+                completeTodo={completeTodo}
               />
             )
           )}
