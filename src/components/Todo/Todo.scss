@@ -17,6 +17,11 @@
     width: 100%;
   }
 
+  &__complete {
+    width: 100%;
+    text-decoration: line-through;
+  }
+
   &__delete-icon,
   &__edit-icon {
     color: rgb(0, 0, 0);
