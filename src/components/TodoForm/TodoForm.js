@@ -17,6 +17,8 @@ function TodoForm({ addTodo }) {
       alert("please add a task");
     } else {
       addTodo(trimmedValues);
+      // clear the form after submission
+      setValues("");
     }
   };
 
