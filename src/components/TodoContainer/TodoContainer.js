@@ -12,10 +12,8 @@ function TodoContainer() {
     // get the todos from local storage and convert the json formatted string
     // into a javascript object with JSON.parse()
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-
     // update the todos state with the todos from the local storage
     setTodo(storedTodos);
-
     console.log(todos);
   }, []);
 
@@ -33,11 +31,25 @@ function TodoContainer() {
     });
   };
 
+  const editTodo = (id) => {
+    setTodo(
+      todos.map((todo) =>
+        todo.id === id ? { ...todos, isEdited: !todo.isEdited } : todo
+      )
+    );
+  };
+
   return (
     <>
       <section className="todo-container">
         <h1 className="todo-container__header">Add something to get done !</h1>
         <TodoForm addTodo={addTodo} />
+        {/*map over the todos array and add render the todo component with the data */}
+        <div className="todo__wrapper">
+          {todos.map((todo, index) => (
+            <Todo key={todo.id} task={todo} />
+          ))}
+        </div>
       </section>
     </>
   );
