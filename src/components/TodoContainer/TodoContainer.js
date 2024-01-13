@@ -39,6 +39,10 @@ function TodoContainer() {
     );
   };
 
+  const deleteTodo = (id) => {
+    setTodo(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <>
       <section className="todo-container">
@@ -50,7 +54,12 @@ function TodoContainer() {
             todo.isEdited ? (
               <EditTodoForm task={todo} editTask={editTask} />
             ) : (
-              <Todo key={todo.id} task={todo} editTodo={editTodo} />
+              <Todo
+                key={todo.id}
+                task={todo}
+                editTodo={editTodo}
+                deleteTodo={deleteTodo}
+              />
             )
           )}
         </div>
