@@ -8,6 +8,16 @@ function TodoForm({ addTodo }) {
   const handleSubmit = (e) => {
     // prevent the default page reload
     e.preventDefault();
+
+    // trim to remove the white space from the text inputs
+    const trimmedValues = values.trim();
+
+    // form validation
+    if (trimmedValues === "") {
+      alert("please add a task");
+    } else {
+      addTodo(trimmedValues);
+    }
   };
 
   return (
