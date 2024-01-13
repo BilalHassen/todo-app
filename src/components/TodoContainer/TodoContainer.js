@@ -46,9 +46,13 @@ function TodoContainer() {
         <TodoForm addTodo={addTodo} />
         {/*map over the todos array and add render the todo component with the data */}
         <div className="todo__wrapper">
-          {todos.map((todo, index) => (
-            <Todo key={todo.id} task={todo} />
-          ))}
+          {todos.map((todo, index) =>
+            todo.isEdited ? (
+              <EditTodoForm />
+            ) : (
+              <Todo key={todo.id} task={todo} editTodo={editTodo} />
+            )
+          )}
         </div>
       </section>
     </>
