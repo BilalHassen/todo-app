@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { useEffect, useState } from "react";
+
 function Todo({ task, editTodo, deleteTodo, completeTodo }) {
   console.log(task);
   return (

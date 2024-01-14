@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./EditTodoForm.scss";
 function EditTodoForm({ task, editTask }) {
   const [values, setValues] = useState(task.task);
