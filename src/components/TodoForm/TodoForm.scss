@@ -9,7 +9,7 @@
   gap: 0.4rem;
 
   &__input {
-    background-color: $darker-background;
+    background-color: $transparent-background;
     border: none;
     outline: none;
     box-shadow: none;
@@ -28,7 +28,7 @@
   }
 
   &__button {
-    background-color: $darker-background;
+    background-color: $transparent-background;
     border: none;
     outline: none;
     box-shadow: none;
