@@ -8,19 +8,26 @@ import { v4 as uuidv4 } from "uuid";
 function TodoContainer() {
   const [todos, setTodo] = useState([]);
 
+  useEffect(() => {
+    const fetchTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    setTodo(fetchTodos);
+  }, []);
+
   // function to add a new to do to the array of todos
   const addTodo = (todo) => {
     setTodo((prevTodos) => {
       const newTodo = [
-        ...todos,
+        ...prevTodos,
         { id: uuidv4(), task: todo, isEdited: false, completed: false },
       ];
+      const savedTodos = localStorage.setItem("todos", JSON.stringify(newTodo));
       console.log(newTodo);
 
       return newTodo;
     });
   };
 
+  // function to render edit to do form
   const editTodo = (id) => {
     setTodo(
       todos.map((todo) =>
@@ -29,6 +36,7 @@ function TodoContainer() {
     );
   };
 
+  // function to edit each task within a todo
   const editTask = (task, id) => {
     setTodo(
       todos.map((todo) =>
@@ -39,10 +47,12 @@ function TodoContainer() {
     );
   };
 
+  // function to delete todo
   const deleteTodo = (id) => {
     setTodo(todos.filter((todo) => todo.id !== id));
   };
 
+  // function to mark a todo as complete
   const completeTodo = (id) => {
     setTodo(
       todos.map((todo) =>
