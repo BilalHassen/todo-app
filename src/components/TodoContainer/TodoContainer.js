@@ -68,7 +68,6 @@ function TodoContainer() {
   return (
     <>
       <section className="todo-container">
-        <h1 className="todo-container__title">Add something to get done !</h1>
         <TodoForm addTodo={addTodo} />
         {/*map over the todos array and add render the todo component with the data */}
         <div className="todo__wrapper">
