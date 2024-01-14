@@ -36,27 +36,33 @@ function TodoContainer() {
 
   // function to edit each task within a todo
   const editTask = (task, id) => {
-    setTodo(
-      todos.map((todo) =>
+    setTodo((prevTodos) => {
+      const editedTodo = prevTodos.map((todo) =>
         todo.id === id
           ? { ...todo, task: task, isEdited: !todo.isEdited }
           : todo
-      )
-    );
+      );
+
+      localStorage.setItem("todos", JSON.stringify(editedTodo));
+      return editedTodo;
+    });
   };
 
   // function to delete todo
   const deleteTodo = (id) => {
-    setTodo(todos.filter((todo) => todo.id !== id));
+    const deletedTodo = todos.filter((todo) => todo.id !== id);
+    setTodo(deletedTodo);
+    // update the local storage witht the filtered todos
+    localStorage.setItem("todos", JSON.stringify(deletedTodo));
   };
 
   // function to mark a todo as complete
   const completeTodo = (id) => {
-    setTodo(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+    const completeTodo = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
+    setTodo(completeTodo);
+    localStorage.setItem("todos", JSON.stringify(completeTodo));
   };
 
   return (
