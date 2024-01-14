@@ -20,9 +20,7 @@ function TodoContainer() {
         ...prevTodos,
         { id: uuidv4(), task: todo, isEdited: false, completed: false },
       ];
-      const savedTodos = localStorage.setItem("todos", JSON.stringify(newTodo));
-      console.log(newTodo);
-
+      localStorage.setItem("todos", JSON.stringify(newTodo));
       return newTodo;
     });
   };
