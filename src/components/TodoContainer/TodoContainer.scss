@@ -3,21 +3,19 @@
 @use "../../partials/mixins" as *;
 
 .todo-container {
-  background-color: white;
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+
   background-color: $transparent-background;
   border-radius: 10px;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
 
-  &__header {
-    color: $todo-black;
+  &__title {
     padding-top: 1rem;
     text-align: center;
+    color: #050505;
   }
 }
 

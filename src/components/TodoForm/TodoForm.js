@@ -28,7 +28,7 @@ function TodoForm({ addTodo }) {
         <input
           type="text"
           className="todo-form__input"
-          placeholder="enter todo"
+          placeholder="enter task"
           // makes the input a controlled component to always reflect the current
           //value of the state keeping it updated.
           value={values}
