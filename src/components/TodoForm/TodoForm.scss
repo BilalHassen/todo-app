@@ -4,7 +4,7 @@
 
 .todo-form {
   padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   display: flex;
   gap: 0.4rem;
 
@@ -22,7 +22,7 @@
     font-weight: 600;
 
     &::placeholder {
-      color: rgb(110, 0, 255);
+      color: black;
       font-weight: 700;
     }
   }
@@ -35,7 +35,7 @@
     border-radius: 4px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    color: rgb(110, 0, 255);
+    color: black;
     font-weight: 700;
     width: 30%;
   }
