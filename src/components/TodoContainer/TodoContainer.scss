@@ -20,3 +20,9 @@
     text-align: center;
   }
 }
+
+.todo__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
